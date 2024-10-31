@@ -1,0 +1,74 @@
+{% include "header.html" %}
+
+<style>
+    .container00{
+        height:80vh ;
+        display: grid;
+        justify-items: center; /* Center horizontally */
+        align-content: center;
+        justify-content: center;
+        
+    }
+    .form00{
+        background-color: white;
+        padding: 20px;
+        margin: 20px;
+        border: 1px, solid black;
+        border-radius: 12px;
+        box-shadow: -18px 20px 20px 10px rgba(0, 0, 0, 0.2);
+        background-color: #c0d9ff;
+    }
+    input[type=text]{
+        width: 90%;
+        padding: 5px;
+        margin: 10px;
+    }
+    input[type=number]{
+        width: 90%;
+        padding: 5px;
+        margin: 10px;
+    }
+
+    input[type=submit]{
+        width: 166px;
+        height: 18px;
+        padding-top: 10px;
+        padding-bottom: 20px;
+        margin: 9px;
+        margin-left: 65px;
+    }
+
+</style>
+<body>
+    
+    <div class="container00">
+        <form class="form00" method="POST">
+            <h2>Upload Student Result</h2>
+            {% csrf_token %}
+            <div>
+                <label for="student_name">Student Name:</label>
+                <input type="text" name="student_name">
+            </div>
+            <div> 
+                <label for="roll_number">Roll Number: </label>
+                <input type="text" name="roll_number">
+            </div>
+            <div>
+                <label for="subject">Subject:</label>
+                <input type="text" name="subject">
+            </div>
+            <div>
+                <label for="marks">Marks:</label>
+                <input type="number" name="marks">
+            </div>
+            <div>
+                <input type="submit" value="Upload Result">
+                {% if user.is_authenticated %}
+                    <a href="{% url 'logout' %}">Logout</a>
+                {% endif %}
+
+            </div>  
+        </form>
+    </div>
+  
+</body>

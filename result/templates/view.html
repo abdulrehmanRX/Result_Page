@@ -1,0 +1,43 @@
+{% include 'header.html' %}
+
+
+<style>
+    .centeralign {
+        display: grid;
+        justify-items: center; /* Center horizontally */
+        align-items: center; /* Center vertically */
+
+    }
+</style>
+
+<body>
+
+    <div class='centeralign'>
+
+        <h2>Student Result</h2><br>
+        Name---------Subject----------Marks
+        {% if result %}
+
+        <ul>
+            
+            {% for res in result %}
+
+            <li>{{ res.student_name }} </li>
+            <li>{{ res.subject }}</li>
+            <li>{{ res.marks }}</li>
+            {% endfor %}
+        </ul>
+
+        {% else %}
+        <p>No results found for this roll number.</p>
+        {% endif %}
+
+    </div>
+
+    <section>
+        <div>
+            {% comment %} <a href="http://127.0.0.1:8000/results/upload/">Upload</a> {% endcomment %}
+        </div>
+    </section>
+
+</body>

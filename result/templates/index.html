@@ -1,0 +1,47 @@
+{% include "header.html" %}
+{% load static %}
+
+<style>
+    .img img {
+        width: 100%;
+        height: 100%;
+        /* Match the div’s height */
+        animation: zoomInOut 10s ease infinite;
+    }
+
+
+    @keyframes zoomInOut {
+
+        0%,
+        100% {
+            transform: scale(1);
+            /* Starting scale */
+        }
+
+        50% {
+            transform: scale(1.5);
+            /* Midway scale (zoomed in) */
+        }
+    }
+
+    .zoom-animation {
+        animation: zoomInOut 10s ease infinite;
+    }
+
+    .img {
+        background-color: aqua;
+        height: 500px;
+        overflow: hidden;
+        /* Keep image within the container */
+    }
+</style>
+
+<body>
+    <main>
+        <section>
+            <div class="img">
+                <img src="{% static  'result\static\aple.gif.gif '%}" alt="">
+            </div>
+        </section>
+    </main>
+</body>

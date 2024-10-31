@@ -1,0 +1,53 @@
+
+{% include "header.html" %}
+
+<style>
+
+.container01{
+    display: flex;
+    justify-content: center;
+    justify-items: center;
+    align-items: center;
+    height: 70vh;
+}
+
+form {
+    background-color: #c0d9ff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: -18px 20px 20px 10px rgba(0, 0, 0, 0.2);
+}   
+   input[type=text]{
+    width: 80%;
+    padding: 5px;
+    margin: 10px;
+
+}
+input[type=submit]{
+    
+    
+    
+    
+
+    margin-left: 65px;
+}
+
+
+</style>
+
+
+<body>
+    <div class="container01">
+        <form method="POST">
+            <h2>Search Student Result</h2>
+            {% csrf_token %}
+            <div>
+                <label for="roll_number">Enter Roll Number:</label>
+                <input type="text" name="roll_number">
+                <input type="submit" value="Search Result">
+
+            </div>
+        </form>
+    </div>
+
+</body>
